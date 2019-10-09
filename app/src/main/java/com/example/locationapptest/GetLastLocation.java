@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -25,7 +24,7 @@ import com.google.android.gms.location.SettingsClient;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
-public class MainActivity extends AppCompatActivity {
+public class GetLastLocation extends AppCompatActivity {
 
     private static final int REQUEST_LOCATION = 1000;
     private long UPDATE_INTERVAL = 5 * 1000;  /* 5 secs */
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         if (checkPermissions())
             requestPermissions();
         else {
-            FusedLocationProviderClient locationClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
+            FusedLocationProviderClient locationClient = LocationServices.getFusedLocationProviderClient(GetLastLocation.this);
             locationClient.getLastLocation()
                     .addOnSuccessListener(new OnSuccessListener<Location>() {
                         @Override
@@ -124,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (checkPermissions()) return;
         // new Google API SDK v11 uses getFusedLocationProviderClient(this)
-        FusedLocationProviderClient locationClient = LocationServices.getFusedLocationProviderClient(MainActivity.this);
+        FusedLocationProviderClient locationClient = LocationServices.getFusedLocationProviderClient(GetLastLocation.this);
         locationClient.requestLocationUpdates(mLocationRequest, new LocationCallback() {
                     @Override
                     public void onLocationResult(LocationResult locationResult) {
