@@ -13,6 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="50dp">
 
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center|left"
+            android:textColor="#FFFFFF"
+            android:text="GOOGLE MAP API"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        <ImageView
+            android:layout_marginRight="50dp"
+            android:layout_gravity="right|center"
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_directions_black_24dp" />
 
         <ImageView
             android:layout_marginRight="10dp"
