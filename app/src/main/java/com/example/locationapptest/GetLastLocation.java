@@ -36,7 +36,7 @@ public class GetLastLocation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_getlastlocation);
 
         button_getlocation = findViewById(R.id.button_Getlastlocation);
         textView_showlocation = findViewById(R.id.textView_showLocation);

@@ -1,30 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GetLastLocation">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView_showLocation"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.389" />
+        android:text="MENU" />
 
     <Button
-        android:id="@+id/button_Getlastlocation"
-        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
         android:text="get last location"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_showLocation" />
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="56dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="last,long to Address"
+        tools:layout_editor_absoluteX="114dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+    <Button
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="google map"
+        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <Button
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="update location every 2s"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="466dp" />
+</LinearLayout>

@@ -146,6 +146,9 @@ public class UpdateLocation extends FragmentActivity implements OnMapReadyCallba
                     @Override
                     public void onLocationResult(LocationResult locationResult) {
 
+                        //clear marker
+                        mMap.clear();
+
                         LatLng locationNow = new LatLng(locationResult.getLastLocation().getLatitude(),
                                 locationResult.getLastLocation().getLongitude());
 
