@@ -76,27 +76,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
 
         arrayList = new ArrayList<>();
-
-        Places.initialize(getApplicationContext(), "AIzaSyAY0cmqo428O8bLE6T_ADmtrbuPxrHKS4c");
-
-        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
-                getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
-
-        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.LAT_LNG));
-        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
-            @Override
-            public void onPlaceSelected(@NonNull Place place) {
-                mMap.clear();
-                LatLng latLng = place.getLatLng();
-                mMap.addMarker(new MarkerOptions().position(latLng).title("this"));
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 13));
-            }
-
-            @Override
-            public void onError(@NonNull Status status) {
-                Toast.makeText(MapsActivity.this, "err: " + status, Toast.LENGTH_SHORT).show();
-            }
-        });
+        specifyLocation();
     }
 
 
@@ -395,5 +375,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         return decoded;
+    }
+
+    /* specify location from address input *///--------------------------------------------------------
+    private void specifyLocation() {
+        Places.initialize(getApplicationContext(), "AIzaSyAY0cmqo428O8bLE6T_ADmtrbuPxrHKS4c");
+
+        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+                getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
+
+        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.LAT_LNG));
+        autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
+            @Override
+            public void onPlaceSelected(@NonNull Place place) {
+                mMap.clear();
+                LatLng latLng = place.getLatLng();
+                mMap.addMarker(new MarkerOptions().position(latLng).title("this"));
+                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 13));
+            }
+
+            @Override
+            public void onError(@NonNull Status status) {
+                Toast.makeText(MapsActivity.this, "err: " + status, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
